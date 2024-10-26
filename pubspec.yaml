@@ -1,0 +1,209 @@
+name: prayer
+description: 'A new Flutter project.'
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^8.1.6
+  dio: ^5.7.0
+  flutter_screenutil: ^5.9.3
+  intl: ^0.19.0
+  geolocator: ^13.0.1
+  flutter_native_splash: ^2.4.1
+  shared_preferences: ^2.3.2
+  slide_countdown: ^1.6.1
+  one_clock: ^2.0.1
+  home_widget: ^0.7.0
+  permission_handler: ^11.3.1
+  alarm: ^4.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: '^0.13.1'
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: 'assets/logo.png'
+  min_sdk_android: 21
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^4.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  generate: true
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+  assets:
+    - assets/
+  # To add assets to your application, add an assets section, like this:
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
+flutter_native_splash:
+  # This package generates native code to customize Flutter's default white native splash screen
+  # with background color and splash image.
+  # Customize the parameters below, and run the following command in the terminal:
+  # dart run flutter_native_splash:create
+  # To restore Flutter's default white splash screen, run the following command in the terminal:
+  # dart run flutter_native_splash:remove
+
+  # IMPORTANT NOTE: These parameter do not affect the configuration of Android 12 and later, which
+  # handle splash screens differently than prior versions of Android.  Android 12 and later must be
+  # configured specifically in the android_12 section below.
+
+  # color or background_image is the only required parameter.  Use color to set the background
+  # of your splash screen to a solid color.  Use background_image to set the background of your
+  # splash screen to a png image. This is useful for gradients. The image will be stretch to the
+  # size of the app. Only one parameter can be used, color and background_image cannot both be set.
+  color: '#FFFFFF'
+  color_dark: '#FFFFFF'
+  #background_image: "assets/background.png"
+  image: assets/logo.png
+  image_dark: assets/logo.png
+  # Optional parameters are listed below.  To enable a parameter, uncomment the line by removing
+  # the leading # character.
+
+  # The image parameter allows you to specify an image used in the splash screen.  It must be a
+  # png file and should be sized for 4x pixel density.
+  #image: assets/splash.png
+
+  # The branding property allows you to specify an image used as branding in the splash screen.
+  # It must be a png file. It is supported for Android, iOS and the Web.  For Android 12,
+  # see the Android 12 section below.
+  #branding: assets/dart.png
+
+  # To position the branding image at the bottom of the screen you can use bottom, bottomRight,
+  # and bottomLeft. The default values is bottom if not specified or specified something else.
+  #branding_mode: bottom
+
+  # Set the branding padding from the bottom of the screen.  The default value is 0
+  # branding_bottom_padding: 24
+
+  # The color_dark, background_image_dark, image_dark, branding_dark are parameters that set the background
+  # and image when the device is in dark mode. If they are not specified, the app will use the
+  # parameters from above. If the image_dark parameter is specified, color_dark or
+  # background_image_dark must be specified.  color_dark and background_image_dark cannot both be
+  # set.
+  #color_dark: "#042a49"
+  #background_image_dark: "assets/dark-background.png"
+  #image_dark: assets/splash-invert.png
+  #branding_dark: assets/dart_dark.png
+
+  # From Android 12 onwards, the splash screen is handled differently than in previous versions.
+  # Please visit https://developer.android.com/guide/topics/ui/splash-screen
+  # Following are specific parameters for Android 12+.
+  android_12:
+    # The image parameter sets the splash screen icon image.  If this parameter is not specified,
+    # the app's launcher icon will be used instead.
+    # Please note that the splash screen will be clipped to a circle on the center of the screen.
+    # App icon with an icon background is required for API level 31+.
+    # More info: https://developer.android.com/guide/topics/ui/splash-screen#api31
+    image: assets/logo.png
+    image_dark: assets/logo.png
+
+    # The icon_background_color parameter sets the background color for the image parameter
+    # above. If this parameter is not specified, the color parameter will be used instead.
+    # icon_background_color: "#111111"
+
+    # The icon_background_image parameter sets the background image for the image parameter
+    # above. If this parameter is not specified, the icon_background_color parameter will be used
+    # instead. Please note that the icon background image will be cropped to a circle and this
+    # parameter is supported for Android API level 31+.
+    # icon_background_image: assets/dark-background.png
+
+    # The icon_background_color_dark, icon_background_image_dark and image_dark are parameters that
+    # set the icon background and image when the device is in dark mode. If they are not specified,
+    # the app will use the parameters from above.
+    # icon_background_color_dark: "#000000"
+    # icon_background_image_dark: assets/dark-background.png
+    # image_dark: assets/splash-invert.png
+
+  # The android_gravity and ios_content_mode parameters set the gravity of the splash image for
+  # Android and the content mode of the splash image for iOS.  The default values are center for
+  # both parameters.
+  # Valid android_gravity values are: bottom, center, end, left, right, start, and top.
+  #android_gravity: center
+  # Valid ios_content_mode values are: center, bottom, top, scaleToFill, scaleAspectFill, and
+  # scaleAspectFit.
+  #ios_content_mode: center
+
+  # The fullscreen parameter removes the app bar from the splash screen.
+  #fullscreen: true
+
+  # The android_resize_mode and ios_resize_mode parameters set the resizeMode of the splash image for
+  # Android and iOS.  The default values are cover for Android and center for iOS.
+  # Valid android_resize_mode values are: contain, cover, and stretch.
+  #android_resize_mode: cover
+  # Valid ios_resize_mode values are: contain, cover, and stretch.
+  #ios_resize_mode: center
+
+  # The fill parameter tells the splash screen to fill the entire screen.  This is useful for an
+  # image that matches the app icon with a solid color background, and the background color setting.
+  #fill: true
