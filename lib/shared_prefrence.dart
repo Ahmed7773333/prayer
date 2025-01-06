@@ -27,7 +27,7 @@ class SharedPrefrenceHelper {
 
     await prefs.setString(dateKey, data?.data?.date?.hijri?.date ?? '');
     await prefs.setString(monthKey, data?.data?.date?.hijri?.month?.ar ?? '');
-    await prefs.setString(yearKey, data?.data?.date?.hijri?.year ?? '');
+    await prefs.setInt(yearKey, data?.data?.date?.hijri?.year ?? 0);
     await prefs.setString(
         cityKey, (data?.data?.meta?.timezone ?? '').split('/').last);
     await prefs.setString(
@@ -52,7 +52,7 @@ class SharedPrefrenceHelper {
     String month = prefs.getString(monthKey) ?? '';
     String city = prefs.getString(cityKey) ?? '';
     String weekDay = prefs.getString(weekDayKey) ?? '';
-    String year = prefs.getString(yearKey) ?? '';
+    int year = prefs.getInt(yearKey) ?? 0;
     String fajr = prefs.getString(fajrKey) ?? '';
     String duhr = prefs.getString(duhrKey) ?? '';
     String asr = prefs.getString(asrKey) ?? '';

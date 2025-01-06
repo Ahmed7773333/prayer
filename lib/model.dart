@@ -105,10 +105,10 @@ class Date {
 class Hijri {
   String? date;
   String? format;
-  String? day;
+  int? day;
   Weekday? weekday;
   Month? month;
-  String? year;
+  int? year;
   Designation? designation;
   List<Null>? holidays;
 
@@ -153,17 +153,20 @@ class Weekday {
 }
 
 class Month {
-  num? number;
+  int? number;
   String? en;
   String? ar;
+  int? days;
 
-  Month({this.number, this.en, this.ar});
+  Month({this.number, this.en, this.ar, this.days});
 
   Month.fromJson(Map<String, dynamic> json) {
     number = json['number'];
     en = json['en'];
     ar = json['ar'];
+    days = json['days'];
   }
+
 }
 
 class Designation {
@@ -179,13 +182,14 @@ class Designation {
 }
 
 class Gregorian {
-  String? date;
+   String? date;
   String? format;
   String? day;
   Weekday? weekday;
   Month? month;
   String? year;
   Designation? designation;
+  bool? lunarSighting;
 
   Gregorian(
       {this.date,
@@ -194,19 +198,21 @@ class Gregorian {
       this.weekday,
       this.month,
       this.year,
-      this.designation});
+      this.designation,
+      this.lunarSighting});
 
   Gregorian.fromJson(Map<String, dynamic> json) {
     date = json['date'];
     format = json['format'];
     day = json['day'];
     weekday =
-        json['weekday'] != null ? Weekday.fromJson(json['weekday']) : null;
-    month = json['month'] != null ? Month.fromJson(json['month']) : null;
+        json['weekday'] != null ? new Weekday.fromJson(json['weekday']) : null;
+    month = json['month'] != null ? new Month.fromJson(json['month']) : null;
     year = json['year'];
     designation = json['designation'] != null
-        ? Designation.fromJson(json['designation'])
+        ? new Designation.fromJson(json['designation'])
         : null;
+    lunarSighting = json['lunarSighting'];
   }
 }
 
@@ -346,7 +352,7 @@ class LocalModel {
       this.month = '',
       this.city = '',
       this.weekDay = '',
-      this.year = '',
+      this.year = 0,
       this.fajr = '',
       this.duhr = '',
       this.asr = '',
@@ -361,7 +367,7 @@ class LocalModel {
   final String month;
   final String city;
   final String weekDay;
-  final String year;
+  final int year;
   final String fajr;
   final String duhr;
   final String asr;
